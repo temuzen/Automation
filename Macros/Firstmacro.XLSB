@@ -1,0 +1,22 @@
+
+Sub Macro1()
+'
+' Macro1 Macro
+' Firstmacro
+'
+' Keyboard Shortcut: Ctrl+Shift+A
+'
+    Rows("1:2").Select
+    Selection.Copy
+    Sheets("Data").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("Default MW").Select
+    Rows("2:2").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("Data").Select
+    Range("A3").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub

@@ -1,0 +1,42 @@
+
+Sub Macro1()
+'
+' Macro1 Macro
+' Firstmacro
+'
+' Keyboard Shortcut: Ctrl+Shift+A
+'
+    Rows("1:2").Select
+    Selection.Copy
+    Sheets("Data").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("Default MW").Select
+    Rows("2:2").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("Data").Select
+    Range("A3").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
+    Dim i As Integer
+    For i = 2 To 100
+        Sheets("Default MW").Select
+        a = b = CStr(i)
+        x = Stringconcat("a", ":", "b")
+        Rows(x).Select
+        Application.CutCopyMode = False
+        Selection.Copy
+        Sheets("Data").Select
+        x = i + 1
+        dra = CStr(x)
+        dran = Stringconcat("A", "dra")
+        Range(dran).Select
+        Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+            :=False, Transpose:=False
+    Next i
+        
+        
+End Sub
