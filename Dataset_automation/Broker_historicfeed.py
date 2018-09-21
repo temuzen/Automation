@@ -47,24 +47,27 @@ go to Tools        (519,235)
 12) Press delete
 13) click(548,157)
 
-
-
-        repeat
-
 '''
+
+        #repeat
+
+
 #-----------------------------------Real code
+
+
+
 for i in range(1,50):
 
-    pgu.click(234,156)
-    pgu.click(154,269)#Script select
+    pgu.click(195,130)
+    pgu.click(120,230)#Script select
     pgu.hotkey('shift','c')#Chart Option Generation
-    pgu.click(1154,579)#Chart Generation /// Selection of days
-    pgu.click(1180,727)#Click ok
+    pgu.click(1050,539)#Chart Generation /// Selection of days
+    pgu.click(1150,700)#Click ok
     sleep(5)
-    pgu.moveTo(322,587) #move to chart env
+    pgu.moveTo(195,359) #move to chart env
     pgu.click(button='right', clicks=1) # Right click 
-    pgu.click(335,346)# Choose the option Save chart
-    pgu.click(750,459)# Save chart to excel
+    pgu.click(300,652)# Choose the option Save chart
+    pgu.click(550,750)# Save chart to excel
 
     window = win32gui.GetWindowText(win32gui.GetForegroundWindow())# Wait for the excel popup
     x=window.find('xcel')
@@ -78,14 +81,16 @@ for i in range(1,50):
             break
 
     sleep(2)
-    pgu.click(1597,218)# Close the excel file
+    pgu.click(1880,20)# Close the excel file
     sleep(2)
 #i = int(input("enter i"))    
     for x in range(430,690,5):  
-        pgu.click(x,150)
-        pgu.click(x,156)
+        pgu.click(x,130)
+        pgu.click(x,125)
+        pgu.click(x,135) 
         
-    
-    pgu.click(234,156)
+    #pgu.click(234,156)
+    pgu.click(195,130)
+    pgu.click(120,230)#Script select
     pgu.press('delete')
     
